@@ -1,0 +1,134 @@
+
+<ion-header>
+ <ion-navbar hideBackButton>
+         <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+          <ion-title class="titlehead"><h2>Complaint Details</h2>{{ulbName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+
+
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <h2>Complaint Date</h2>
+      </ion-thumbnail>
+      <p>{{complaintDate}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <h2>Type</h2>
+        </ion-thumbnail>
+        <p>{{componentType}}</p>
+      </ion-item>
+  </ion-list>
+
+   <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <h2>Location</h2>
+      </ion-thumbnail>
+      <p>{{location}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <h2>Ward</h2>
+      </ion-thumbnail>
+      <p>{{wardNo}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <h2>Pole Number</h2>
+      </ion-thumbnail>
+      <p>{{poleNo}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <h2>Complaint Mode</h2>
+      </ion-thumbnail>
+      <p>{{complaintmodeid}}</p>
+    </ion-item>
+  </ion-list>
+    <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <h2>Cause of Complaint</h2>
+      </ion-thumbnail>
+      <p>{{causeofcomplaint}}</p>
+    </ion-item>
+  </ion-list>
+    <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <h2>Complaint Quantity</h2>
+      </ion-thumbnail>
+      <p>{{quantity}}</p>
+    </ion-item>
+  </ion-list>
+      <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <h2>Vendor</h2>
+      </ion-thumbnail>
+      <p>{{vendor}}</p>
+    </ion-item>
+  </ion-list>
+
+    <ion-item>
+      <ion-label>Quantity Rectified </ion-label>
+      <ion-select [(ngModel)]="rectifiedqty">
+         <ion-option [value]="item" *ngFor="let item of multipleQty" >
+          {{item}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+     <div class="location_div" *ngIf="status=='Rectified'||status=='ulb'">
+        <ion-item style="z-index: 9; background: transparent;">
+            <ion-label>Rectified date</ion-label>
+            <ion-datetime displayFormat="DD-MM-YYYY" max={{maxDate}} pickerFormat="DD-MM-YYYY" [(ngModel)]="rectifiedDate">
+            </ion-datetime>
+        </ion-item>
+        <ion-icon name="md-calendar" class="location"></ion-icon>
+    </div>
+
+    <ion-item>
+      <ion-label>Rectification Status </ion-label>
+      <ion-select [(ngModel)]="status"  (ionChange)="onChange(status)">
+        <ion-option value="Not Rectified">Not Rectified</ion-option>
+        <ion-option value="Rectified">Rectified</ion-option>
+        <ion-option value="ulb" *ngIf="assignedTo!='ULB'">Transfer to ULB</ion-option>  
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="status=='Rectified'||status=='ulb'">
+      <ion-label>Complaint Cause </ion-label>
+      <ion-select [(ngModel)]="componentypemasterid">
+        <ion-option [value]="item.id" 
+        *ngFor="let item of componentList" >{{item.componenttype}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+     <ion-textarea [(ngModel)]="remarks" placeholder="Remarks"></ion-textarea>
+    </ion-item>
+    <button ion-button color="secondary" (click)="checkComplaint()" block>
+    Submit</button>
+</ion-content>

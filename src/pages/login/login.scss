@@ -1,0 +1,28 @@
+page-login {
+.logo
+{
+	text-align:center;
+	width:100%;
+}
+		.logo img
+		{
+			width:70px;
+			text-align:center;
+		}
+
+		ion-content
+		{
+		background:url(../assets/imgs/bg.jpg);
+		background-size:100% 100%;
+		}
+
+		.item
+		{
+		background-color:transparent;
+		}
+}
+
+.back-button
+{
+	z-index: 99999!important;
+}

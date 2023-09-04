@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar hideBackButton>       
+      <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+        <ion-title class="titlehead"><h2>Add Payment</h2>{{ulbName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	  <ion-list>
+	      <ion-list>
+		    <ion-item>
+		      <ion-label>Invoice Date</ion-label>
+			    <ion-datetime displayFormat="DD-MM-YYYY" max={{maxDate}} pickerFormat="DD-MM-YYYY" [(ngModel)]="addPayment.invoiceDate1"> 
+			    </ion-datetime>
+		    </ion-item> 
+			<ion-item>
+		      <ion-label>Invoice Number</ion-label>
+			  <ion-input type="text" value="" placeholder="" [(ngModel)]="addPayment.invoiceNo">  </ion-input>
+		    </ion-item>    
+		    <ion-item>
+		      <ion-label>Invoice Amount</ion-label>
+			  <ion-input type="number" value="" placeholder="" [(ngModel)]="addPayment.invoiceAmount">  </ion-input>
+		    </ion-item> 
+		  </ion-list>
+	  </ion-list>
+	  <button ion-button color="secondary" block (click)="createInvoice()">Save</button>
+
+
+</ion-content>

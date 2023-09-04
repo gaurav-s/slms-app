@@ -1,0 +1,80 @@
+page-opencomplaintslist {
+	.list
+	{
+		margin:0!important;
+		border-bottom:solid 1px #ccc;
+	}
+
+	.bar-button
+	{
+		text-transform: none;
+	}
+
+	.toolbar .toolbar-content
+	{
+	    position: absolute;
+    	width: 100%;
+    	text-align:center;
+	}
+
+	.toolbar-title,.bar-button
+	{
+		color:#488aff;
+	}
+
+	.toolbar-title
+	{
+	    font-size: 16px!important;
+	}
+
+	ion-thumbnail
+	{
+		text-align:center;
+	}
+
+	ion-thumbnail .icon
+	{
+		font-size:60px;
+	}
+
+	.button-inner h2
+	{
+		width:100%;
+	}
+
+	ion-thumbnail
+	{
+		margin:0!important;
+	}
+
+	ion-thumbnail h2
+	{
+		font-size: 24px!important;
+	    float: left;
+	    width: 100%;
+	    padding-top: 14px;
+	}
+
+	.list .item
+	{
+		padding:0
+	}
+
+	.item .label
+	{
+		margin-right:0;
+	}
+
+	.item p
+	{
+		font-size:12px;
+	}
+
+	.titlehead h2
+	{
+	    margin: 0;
+    font-size: 19px;
+    color: #000;
+	}
+
+}

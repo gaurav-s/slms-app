@@ -1,0 +1,26 @@
+
+<ion-content padding  >
+
+	<div class="logo">
+		<img src="assets/imgs/logos.png"/>
+		<h2>StreetLight Complaints Tracking</h2>
+	</div>
+
+	<form [formGroup]="loginForm" novalidate>
+		<ion-list>
+
+		  <ion-item>
+		    <ion-label floating>Username</ion-label>
+				<ion-input type="text" formControlName="userid"  autocomplete="true" spellcheck="false" 
+				autocorrect="off" ></ion-input>
+		  </ion-item>
+
+		  <ion-item>
+		    <ion-label floating>Password</ion-label>
+		    <ion-input type="password" formControlName="pass" ></ion-input>
+		  </ion-item>
+
+		</ion-list>
+	</form>
+	<button ion-button block (click)="onLogin()">SIGN IN</button>
+</ion-content>

@@ -1,0 +1,99 @@
+page-complaintdetails {
+		.list
+	{
+		margin:0!important;
+		border-bottom:solid 1px #ccc;
+	}
+
+	.bar-button
+	{
+		text-transform: none;
+	}
+
+	.toolbar .toolbar-content
+	{
+	    position: absolute;
+    	width: 100%;
+    	text-align:center;
+	}
+	.location_div .datetime{
+		padding-right:30px!important;
+	}
+
+	.location_div
+	{
+		position:relative;
+	}
+
+	.location
+	{
+		position: absolute;
+	    top: 8px;
+	    right: 10px;
+	    font-size: 28px;
+	}
+	
+
+	.toolbar-title,.bar-button
+	{
+		color:#488aff;
+	}
+
+	.toolbar-title
+	{
+	    font-size: 16px!important;
+	}
+
+	ion-thumbnail
+	{
+		text-align:center;
+	}
+
+	ion-thumbnail .icon
+	{
+		font-size:60px;
+	}
+
+	.button-inner h2
+	{
+		width:100%;
+	}
+
+	ion-thumbnail
+	{
+		margin:0!important;
+		min-height:auto!important;
+		min-width:auto!important;
+	}
+
+	ion-thumbnail h2
+	{
+		font-size: 12px!important;
+	    float: left;
+	    width: 100%;
+	}
+
+	.list .item
+	{
+		padding:0
+	}
+
+	.item .label
+	{
+		margin-right:0;
+	}
+
+	.item p
+	{
+		font-size:12px;
+		text-align:right;	
+	}
+
+		.titlehead h2
+	{
+	    margin: 0;
+    font-size: 19px;
+    color: #000;
+	}
+
+}

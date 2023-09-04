@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-navbar hideBackButton>       
+      <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+        <ion-title class="titlehead"><h2>Invoice {{payment.invoiceno}}</h2>{{ulbName}}</ion-title>
+        <ion-buttons class="rightbtn" right>
+            <button ion-button (click)="openaddpay()" *ngIf="payment.totalreceivedamt!=payment.invoiceamount">
+                <ion-icon name="ios-add"></ion-icon> Payment
+            </button>        	
+            <button ion-button (click)="openaddfollow()">
+                <ion-icon name="ios-add"></ion-icon> Followup
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<div>
+	  <ion-segment [(ngModel)]="list">
+	    <ion-segment-button value="details">
+	      Details
+	    </ion-segment-button>
+	    <ion-segment-button value="amount" (click)="receivedPaymentList()">
+	      Received Amount
+	    </ion-segment-button>
+	   	<ion-segment-button value="follow" (click)="followList()">
+	      Follow up
+	    </ion-segment-button>
+	  </ion-segment>
+	</div>
+
+	<div [ngSwitch]="list">
+	  <ion-list *ngSwitchCase="'details'">
+	      <ion-list>
+		    <ion-item>
+		      <ion-label>Invoice Number</ion-label>
+			  <ion-input type="text" value="{{payment.invoiceno}}" placeholder="" disabled>  </ion-input>
+		    </ion-item> 
+		    <ion-item>
+		      <ion-label>Invoice Date</ion-label>
+			  <ion-input type="text" value="{{payment.invoicedate}}" placeholder="" disabled>  </ion-input>
+		    </ion-item> 
+		    <ion-item>
+		      <ion-label>Invoice Amount</ion-label>
+			  <ion-input type="text" value="{{payment.invoiceamount}}" placeholder="" disabled>  </ion-input>
+		    </ion-item> 
+		    <ion-item>
+		      <ion-label>Total payments</ion-label>
+			  <ion-input type="text" value="{{payment.totalreceivedamt}}"   placeholder="" disabled>  </ion-input>
+		    </ion-item> 
+		    <ion-item>
+		      <ion-label>Pending Amount</ion-label>
+			  <ion-input type="text"  value="{{payment.pendingAmount}}" placeholder="" disabled>  </ion-input>
+		    </ion-item> 
+		     
+		    <ion-item>
+		      <ion-label style="float:left; text-align: left;">Status</ion-label>
+			      <ion-select [(ngModel)]="payment.status">
+			        <ion-option value="Unpaid">Unpaid</ion-option>
+							<ion-option value="paid">Paid</ion-option>
+							<ion-option value="Partially Paid">Partially Paid</ion-option>
+			      </ion-select>
+		    </ion-item> 
+		    <button ion-button color="secondary" block (click)="updatePayment()">Save</button>
+		  </ion-list>
+	  </ion-list>
+
+	  <ion-list *ngSwitchCase="'amount'">
+	  	<ion-list>
+		    <ion-item *ngFor="let data of receivedPayment">
+		      <ion-label>{{data.receivedDate}}</ion-label>
+			  <ion-input type="text" value="{{data.amountReceived}}" placeholder="" disabled>  </ion-input>
+		    </ion-item> 
+		   
+		</ion-list>
+	  </ion-list>
+
+	  <ion-list *ngSwitchCase="'follow'">
+	  	<ion-list>
+		    <ion-item *ngFor="let data of followuplist">
+		      <ion-label>{{data.followupDate}}</ion-label>
+		      <ion-label class="rightlabel">{{data.remarks}}</ion-label>
+
+		    </ion-item> 
+		</ion-list>
+	  </ion-list>
+	</div>
+
+</ion-content>

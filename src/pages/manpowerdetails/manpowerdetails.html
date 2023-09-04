@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar hideBackButton>       
+      <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+        <ion-title class="titlehead"><h2>Add Man Power Details</h2>{{ulbName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Man Power Date</ion-label>
+	    <ion-input type="text" value="{{manPower.manpowerDate}}"  disabled>  
+
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Vendor Manpower LED</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="manPower.vendorManpowerLED" placeholder="">
+        
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Vendor Manpower CCMS</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="manPower.vendorManpowerCCMS" placeholder="">
+        
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ULB Manpower LED</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="manPower.ulbResourceLED" placeholder="">
+        
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ULB Manpower CCMS</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="manPower.ulbResourceCCMS" placeholder="">
+        
+      </ion-input>
+    </ion-item>
+
+  </ion-list>
+
+      <button ion-button color="secondary" block (click)="createManpower()">Submit</button>
+</ion-content>

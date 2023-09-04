@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar hideBackButton>       
+      <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+        <ion-title class="titlehead"><h2>Streetlight Stock {{subcategoryName}} - {{spareName}}</h2>{{ulbName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+          <ion-label>Stock Date</ion-label>
+          <ion-datetime displayFormat="DD-MM-YYYY" max={{currentDate}} min={{maxDate}} pickerFormat="DD-MM-YYYY" [(ngModel)]="addStock.stockDate1" (ngModelChange)="dateChange(addStock.stockDate1)"> 
+          </ion-datetime>
+    </ion-item> 
+
+  
+
+    <ion-item>
+        <ion-label>Stock In</ion-label>
+        <ion-input type="number" value="" placeholder="" 
+        [(ngModel)]="addStock.stockIn">  </ion-input>
+    </ion-item>   
+
+      <ion-item>
+         <ion-label>Stock</ion-label>
+         <ion-input type="number" value="" placeholder="" 
+         [(ngModel)]="addStock.stock">  </ion-input>
+    </ion-item>   
+
+   
+
+  </ion-list>
+
+      <button ion-button color="secondary" block (click)="createStock()">Submit</button>
+</ion-content>

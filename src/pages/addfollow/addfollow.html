@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar hideBackButton>       
+      <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+        <ion-title class="titlehead"><h2>Add Followup</h2>{{ulbName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	  <ion-list>
+	      <ion-list>
+	      	<ion-item>
+		          <ion-label>Followup Date</ion-label>
+			    <ion-datetime displayFormat="DD-MM-YYYY" max={{maxDate}} pickerFormat="DD-MM-YYYY" [(ngModel)]="followup.date1"> 
+			    </ion-datetime>
+		    </ion-item> 
+		    <ion-item>
+		      <ion-label>Remarks</ion-label>
+			  <ion-textarea type="text" value=""[(ngModel)]="followup.remarks"   placeholder="" >  </ion-textarea>
+		    </ion-item> 
+		  </ion-list>
+	  </ion-list>
+	  <button ion-button color="secondary" block (click)="addFollow()">Save</button>
+
+
+</ion-content>

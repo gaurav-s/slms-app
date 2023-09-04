@@ -1,0 +1,124 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+         <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+          <ion-title class="titlehead"><h2>New Complaint</h2>{{ulbName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+  
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Select Ward</ion-label>
+      <ion-select [(ngModel)]="wardNo">
+        <ion-option [value]="item" *ngFor="let item of wardList" >
+          {{item}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <div class="location_div">
+    <ion-item >
+      <ion-input type="text" [(ngModel)]="location" value="" placeholder="Location">  </ion-input>
+    </ion-item>
+    <ion-icon name="md-locate" class="location" (click)="getLocation()"></ion-icon>
+    </div>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="poleNo" value="" placeholder="Pole Number"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Select Complaint type </ion-label>
+      <ion-select [(ngModel)]="complaintypeid">
+        <ion-option [value]="item.id" 
+        *ngFor="let item of complaintList" >{{item.complainttype}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Complaint Mode </ion-label>
+      <ion-select [(ngModel)]="complaintmodeid">
+        <ion-option [value]="item.complaintmodesMasterId" 
+        *ngFor="let item of compaintmode" >{{item.complaintModes}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+   <!--  <ion-item>
+      <ion-label>Complaint Cause </ion-label>
+      <ion-select [(ngModel)]="componentypeid">
+        <ion-option [value]="item.id" 
+        *ngFor="let item of componentList" >{{item.componenttype}}
+        </ion-option>
+      </ion-select>
+    </ion-item> -->
+
+        <div class="location_div">
+    <ion-item style="z-index: 9; background: transparent;">
+        <ion-label>Complaint Receive Date</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" max={{maxDate}} 
+        pickerFormat="DD-MM-YYYY" 
+        [(ngModel)]="complaintDate">
+        </ion-datetime>
+    </ion-item>
+    <ion-icon name="md-calendar" class="location"></ion-icon>
+    </div>
+
+
+    <ion-item>
+      <ion-label>Multiple Quantity</ion-label>
+      <ion-toggle [(ngModel)]="ismultiple" (ionChange)="updateItem(ismultiple)"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Quantity </ion-label>
+      <ion-select [(ngModel)]="quantity" disabled="{{!ismultiple}}">
+        <ion-option [value]="item" *ngFor="let item of multipleQty" >
+          {{item}}
+        </ion-option>
+      </ion-select>
+  </ion-item>
+
+
+  <div class="location_div" *ngIf="status=='Rectified'||status=='ulb'">
+    <ion-item style="z-index: 9; background: transparent;">
+        <ion-label>Rectified date</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" max={{maxDate}} pickerFormat="DD-MM-YYYY" [(ngModel)]="rectifiedDate">
+        </ion-datetime>
+    </ion-item>
+    <ion-icon name="md-calendar" class="location"></ion-icon>
+</div>
+
+<ion-item >
+  <ion-label>Rectification Status </ion-label>
+  <ion-select [(ngModel)]="status"  (ionChange)="onChange(status)">
+    <ion-option value="Not Rectified">Not Rectified</ion-option>
+    <ion-option value="Rectified">Rectified</ion-option>
+    <ion-option value="ulb" *ngIf="assignedTo!='ULB'">Transfer to ULB</ion-option>  
+  </ion-select>
+</ion-item>
+
+<ion-item *ngIf="status=='Rectified'||status=='ulb'">
+  <ion-label>Complaint Cause </ion-label>
+  <ion-select [(ngModel)]="componentypemasterid">
+    <ion-option [value]="item.id" 
+    *ngFor="let item of componentList" >{{item.componenttype}}
+    </ion-option>
+  </ion-select>
+</ion-item>
+
+  <ion-item>
+    <ion-textarea [(ngModel)]="remarks" placeholder="Remarks">      
+    </ion-textarea>
+  </ion-item>
+
+  </ion-list>
+
+      <button ion-button color="secondary" block (click)="createComplaint()">Submit</button>
+</ion-content>

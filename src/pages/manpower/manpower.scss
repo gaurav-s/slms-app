@@ -1,0 +1,36 @@
+page-manpower {
+	
+	.list
+	{
+		margin:0!important;
+		border-bottom:solid 1px #ccc;
+	}
+
+	.bar-button
+	{
+		text-transform: none;
+	}
+
+	.toolbar .toolbar-content
+	{
+	    position: absolute;
+    	width: 100%;
+    	text-align:center;
+	}
+
+	.toolbar-title,.bar-button
+	{
+		color:#488aff;
+	}
+
+	.highcharts-root,.highcharts-container 
+	{
+		width:100%!important;
+	}
+		.titlehead h2
+	{
+	    margin: 0;
+    font-size: 19px;
+    color: #000;
+	}
+}

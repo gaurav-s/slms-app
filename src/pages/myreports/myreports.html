@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar hideBackButton>       
+      <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+        <ion-title class="titlehead"><h2>My Reports</h2>{{ulbName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+	  <ion-list>
+
+	  	<chart [options]="options"></chart>
+	  	
+	  	<chart [options]="options1"></chart>
+
+	  </ion-list>
+
+</ion-content>

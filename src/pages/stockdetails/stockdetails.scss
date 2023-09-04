@@ -1,0 +1,84 @@
+page-stockdetails {
+	
+		.list
+	{
+		margin:0!important;
+		border-bottom:solid 1px #ccc;
+		    font-size: 18px;
+	}
+
+	.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+	color: #000;
+	}
+
+.text-input::-moz-placeholder {
+  color: #000;
+      font-size: 18px;
+}
+
+.label
+{
+	text-align:left;
+}
+
+.text-input ,.input-wrapper
+{
+	font-size: 18px!important;
+	text-align:right;
+}
+
+.text-input:-ms-input-placeholder {
+  color: #000;
+      font-size: 18px;
+}
+
+.text-input::-webkit-input-placeholder {
+  text-indent: 0;
+  color: #000;
+      font-size: 18px;
+}
+
+
+	.bar-button
+	{
+		text-transform: none;
+	}
+
+	.toolbar .toolbar-content
+	{
+	    position: absolute;
+    	width: 100%;
+    	text-align:center;
+	}
+
+	.toolbar-title,.bar-button
+	{
+		color:#488aff;
+	}
+
+	.location_div
+	{
+		position:relative;
+	}
+
+	.location
+	{
+		position: absolute;
+	    top: 8px;
+	    right: 10px;
+	    font-size: 28px;
+	}
+
+	.datetime 
+	{
+
+	}
+	.titlehead h2
+	{
+	    margin: 0;
+    font-size: 15px;
+    color: #000;
+	}
+
+	
+}

@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+         <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+
+          <ion-title class="titlehead"><h2>Open Complaints</h2>{{ulbName}}</ion-title>
+
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="ios-funnel"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="compalaintList.length==0&&Isloading">
+    <p style="text-align: center">No Complaints</p>
+  </ion-list>
+  <ion-list *ngFor="let data of compalaintList">
+    <ion-item (click)="openViewComplaint(data)">
+      <ion-thumbnail item-start *ngIf="categoryId==1">
+        <ion-icon name="ios-bulb-outline"></ion-icon>
+      </ion-thumbnail>
+      <ion-thumbnail item-start *ngIf="categoryId==2||categoryId==3">
+        <ion-icon name="ios-filing-outline"></ion-icon>
+      </ion-thumbnail>
+      <p>Complaint Date: {{data.complaintdate}}</p>
+      <h2>{{data.componenttype}}</h2>
+      <p>Pole {{data.poleno}}</p>
+      <p>Ward {{data.ward}}</p>
+      <p>{{data.location}}</p>
+      <ion-thumbnail clear item-end>
+        <h2>{{data.days}}</h2>
+        <p>Days</p>
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+
+   <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="hasMoreData">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    
+</ion-content>

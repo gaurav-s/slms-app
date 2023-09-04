@@ -1,0 +1,51 @@
+<!--
+  Generated template for the CategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton >
+  <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+    <ion-title>{{ulbName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list *ngFor="let data of categoryList">
+    <button ion-item (click)="selectCategory(data)">
+      {{data.catehoryname}}
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+    </button>  
+  </ion-list>
+
+      <ion-list *ngIf="isLoading">
+        <button ion-item (click)="selectManpower()">
+          Man Power
+          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+        </button>  
+      </ion-list>
+
+      <ion-list *ngIf="isLoading">
+        <button ion-item (click)="selectpayment()">
+          Invoice
+          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+        </button>  
+      </ion-list>
+
+
+      <ion-list *ngIf="isLoading">
+        <button ion-item (click)="selectmyreports()">
+          My Reports
+          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+        </button>  
+      </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar hideBackButton>       
+      <ion-buttons left>
+            <button ion-button icon-only (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                Back
+            </button>
+        </ion-buttons>
+        <ion-title class="titlehead"><h2>{{categoryName}}</h2>{{ulbName}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+	      <ion-list (click)="openComplaint()">
+		    <button ion-item>
+		      Open Complaints
+		      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+		    </button>  
+		  </ion-list>
+
+		  <ion-list (click)="newComplaint()">
+		    <button ion-item >
+		      New Complaint
+		      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+		    </button>  
+		  </ion-list>
+
+		  <ion-list (click)="openstock()">
+		    <button ion-item >
+		      Stock
+		      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+		    </button>  
+		  </ion-list>	  
+
+
+</ion-content>
