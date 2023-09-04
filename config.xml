@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.app.ptcmonitor" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.app.ptcmonitor" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PTC SLMS</name>
     <description>PTC is managing the AMC of LED Street Lights for 44 ULBs requiring PTC to supervise complaint handling system preparation and submission of various reports Submission of MIS etc. For managing the project efficiently PTC has developed an unique state-of-the-art Complaint Handling cum MIS Software for LED Street Light Project. It is a web-based software which is also accessible through mobile App allows site engineers at various locations in the state of Andhra Pradesh to feed-in data pertaining to complaints rectification spares etc. Its key features include the consolidation of data entered remotely automatic generation of reports and MIS in prescribed formats, Invoice-wise status of payments from all ULBs consolidated update on availability of spares and maintenance teams in a ULB on daily basis</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
