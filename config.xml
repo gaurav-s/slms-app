@@ -12,7 +12,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="ScrollEnabled" value="false" />
-    <preference name="android-minSdkVersion" value="20" />
+    <preference name="android-minSdkVersion" value="25" />
     <preference name="android-targetSdkVersion" value="30" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
@@ -86,6 +86,6 @@
     <plugin name="cordova-plugin-compat" spec="~1.2.0" />
     <allow-navigation href="http://192.168.1.156:8100" />
     <plugin name="cordova-plugin-app-version" spec="^0.1.9" />
-    <engine name="android" spec="7.0.0" />
+    <engine name="android" spec="8.0.0" />
     <engine name="ios" spec="4.5.4" />
 </widget>
